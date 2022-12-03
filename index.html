@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ergonomic Furniture Demo</title>
+  <link rel="stylesheet" href="./main.css" type="text/css" />
+  <!-- Font awsome link-->
+  <script src="https://kit.fontawesome.com/6a15cfc39f.js" crossorigin="anonymous"></script>
+  <!-- Bootstrap-->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous" />
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://ajax.aspnetcdn.com/ajax/jquery.ui/1.13.0/jquery-ui.min.js"></script>
+   
+    
+   <!--   <script crossorigin="anonymous" src="https://cdnjs.cloudflare.com/ajax/libs/jsnlog/2.30.0/jsnlog.min.js"></script>
+     <script crossorigin="anonymous" src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+     <jl-javascript-logger-definitions /> -->
+
+
+</head>
+
+<body>
+
+  <script async src="https://unpkg.com/es-module-shims@1.3.6/dist/es-module-shims.js"></script>
+
+
+
+    
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+    crossorigin="anonymous"></script>
+    
+    <main>
+  <!-- Nav bar-->
+  <nav class="navbar navbar-light bg-light d-md-none fixed-top">
+    <div class="container-fluid">
+      <h1 style="font-size:18px">Room Designer 3D</h1>
+      <div>
+      <button type="reset" id="reset" class="btn border-0 bg-transparent"> <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-arrow-counterclockwise"  viewBox="0 0 16 16">
+        <path fill-rule="evenodd" d="M8 3a5 5 0 1 1-4.546 2.914.5.5 0 0 0-.908-.417A6 6 0 1 0 8 2v1z"/>
+        <path d="M8 4.466V.534a.25.25 0 0 0-.41-.192L5.23 2.308a.25.25 0 0 0 0 .384l2.36 1.966A.25.25 0 0 0 8 4.466z"/>
+      </svg></button>
+      <button class="" style="border: none;" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" fill="red" class="bi bi-list" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+      </button>
+      </div>
+      <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Welcome</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Furniture</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Lihgting</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Arrangement</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Navigation</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Advanced</a>
+          </li>
+          
+           <li class="nav-item">
+            <a class="nav-link" href="#">Settings</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+
+
+  
+
+   <!--mobile ui Top-->
+   <div class="row gx-0   " style="position: fixed;">
+
+    <div id="column2" class="col-12 ">
+      
+    <img src="" style="max-width: 100%;"/> 
+    </div>
+
+    <!--mobile ui bottom-->
+    <div id="column1" class=" mobile-coulmn1 col-12 ">
+      <div class="non-3d" id="container1">
+        <!--carousel part-->
+        <div id="carouselExampleDark" class="carousel slide m-2" data-bs-ride="carousel" data-bs-interval="false">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="1000">
+              <div class="active d-flex flex-row justify-content-center">
+                <button type="button" class=" custom-button" id="Welcome">Welcome</button>
+              </div>
+               <!--modal buttons-->
+       
+               <div class="item-card" style="height: 200px;" id="welcome">
+                <div class="welcome-content">
+                  <ul style="list-style-type:disc">
+                  <li style="color:black;">Welcome to Room Designer 3D web application.</li>
+                  <li style="color:black;"> Choose an ergonomic table and chair to your liking. </li>
+                  <li style="color:black;">Configure them with suitable material. </li> 
+                  <li style="color:black;"> Try out various heights, inclinations to suit your life-style. </li>
+                  <li style="color:black;">Adjust lighting and check measurements. </li>
+                  <li style="color:black;">We hope it enables a healthy ergonomic working environment for you.</li>
+                </ul>
+              </div>
+              <div class="d-flex flex-row justify-content-center">
+                <button type="button" class="buttons" id="Tour">Tour</button>
+              </div>
+              </div>
+      
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <div class="active d-flex flex-row justify-content-center">
+                <button type="button" class=" custom-button" id="Furniture">Furniture</button>
+              </div>
+  
+             <!--modal buttons-->
+       
+                <div class="item-card d-flex flex-row justify-content-center"  id="Furniture">
+                    <div class="d-flex flex-row justify-content-around">
+                      <div>
+                      <button type="button"  class="buttons" id="FurnitureChair">Chair</button>
+                      </div>
+                      <div>
+                      <button type="button"  class="buttons" id="Table1">Table</button>
+                      </div>
+                      <div>
+                      <button type="button"   class="buttons" id="windowBlinds1">Window Blinds</button>
+                    </div>
+                    </div>   
+                </div>
+  
+            </div>
+            <div class="carousel-item w-100">
+              <div class="active d-flex flex-row justify-content-center">
+                <button type="button" class=" custom-button" id="Lighting">Lighting</button>
+              </div>
+  
+                <!--modal buttons-->
+       
+                <div class="item-card " id="Lighting">
+                  <div class="d-flex flex-row justify-content-around">
+                    <div>
+                    <button type="button"  class="buttons" id="Controls">Controls</button>
+                    </div>
+                    <div>
+                    <button type="button"  class="buttons" id="Artifacts">Artifacts</button>
+                    </div>
+                  </div>   
+              </div>
+  
+            </div>
+            <div class="carousel-item">
+              <div class="active d-flex flex-row justify-content-center">
+                <button type="button" class=" custom-button" id="Arrangement">Arrangement</button>
+              </div>
+  
+              <div class="item-card " id="Arrangement">
+                <div class="d-flex flex-row justify-content-around">
+                  <div>
+                  <button type="button"  class="buttons" id="Select">Select</button>
+                  </div>
+                  <div>
+                  <button type="button"  class="buttons" id="Unselect">Unselect</button>
+                  </div>
+                  </div>
+                  <div class="d-flex flex-row justify-content-around mt-2">
+                    <div>
+                    <button type="button"  class="buttons" id="Move">
+                      <svg width="18px" height="18px" viewBox="0 0 32 32" fill="currentColor" id="icon" xmlns="http://www.w3.org/2000/svg">
+                        <defs>
+                          <style>
+                            .cls-1 {
+                              fill: none;
+                            }
+                          </style>
+                        </defs>
+                        <title>chart--3D</title>
+                        <path d="M28,23v3.5859l-5-5V15a1,1,0,0,0-.5527-.8945L17,11.3818V5.8281l2.5859,2.586L21,7,16,2,11,7l1.4141,1.4141L15,5.8281v5.5537L9.5527,14.1055A1,1,0,0,0,9,15v6.5859l-5,5V23H2v7H9V28H5.4141l4.7832-4.7832,5.3554,2.6777a1.001,1.001,0,0,0,.8946,0l5.3554-2.6777L26.5859,28H23v2h7V23Zm-13,.3818-4-2V16.6182l4,2Zm1-6.5L12.2363,15,16,13.1182,19.7637,15Zm5,4.5-4,2V18.6182l4-2Z"/>
+                        <rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"/>
+                      </svg>
+                      
+                      Move</button>
+                    </div>
+                    <div>
+                      <button type="button"  class="buttons" id="Rotate"><svg width="18pt" height="18pt" fill="currentColor" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+                        <path d="m227.5 274.57v-109.9l105 57.926v120.23l-96.426-52.5v-0.003906c-2.7148-1.6055-4.9492-3.918-6.457-6.6914-1.5117-2.7734-2.2422-5.9023-2.1172-9.0586zm246.05 0v-109.9l-105 57.926v120.23l96.426-52.5v-0.003906c5.1328-3.5352 8-9.5352 7.5234-15.75zm-18.551-139.47-95.727-52.5c-2.6602-1.5391-5.6758-2.3477-8.75-2.3477-3.0703 0-6.0898 0.80859-8.75 2.3477l-95.727 52.5 103.95 57.398zm52.5 49v41.648c24.652 15.066 40.445 41.172 42.352 70 0 46.551-51.625 89.426-128.62 106.75-6.2539 0.6875-11.664 4.6602-14.195 10.418-2.5312 5.7578-1.7969 12.43 1.9258 17.5 3.7227 5.0703 9.8672 7.7695 16.117 7.082 1.2188 0.17188 2.457 0.17188 3.6758 0 94.852-21.176 156.1-76.477 156.1-140 0.52344-45.324-27.828-85.574-77.352-113.4zm-175 199.15-8.5742-9.2734c-2.1914-2.3438-4.9805-4.0391-8.0664-4.9023s-6.3477-0.86328-9.4336 0c-2.6992 0.60938-5.1797 1.9414-7.1758 3.8516-3.4023 3.1367-5.4219 7.4961-5.6211 12.121-0.19531 4.625 1.4492 9.1367 4.5703 12.555l8.3984 9.1016c-90.301-11.199-157.5-57.75-157.5-111.65l0.003906-0.003907c2.3516-28.777 18.535-54.621 43.398-69.301v-41.648c-49 27.824-77.352 68.074-77.352 110.95 0 72.977 79.801 133.18 189.35 146.65l-8.5742 6.8242c-3.7852 3.0352-6.1367 7.5078-6.5 12.344-0.36328 4.8398 1.2969 9.6094 4.5859 13.176 3.2891 3.5625 7.9141 5.6055 12.762 5.6328 3.9922-0.074219 7.8555-1.4258 11.027-3.8516l43.75-35c3.793-3.0586 6.1406-7.5625 6.4727-12.426 0.3125-4.8398-1.3984-9.5938-4.7227-13.125z"/>
+                       </svg>Rotate</button>
+                      </div>
+                      </div>
+              </div>
+  
+            </div>
+            <div class="carousel-item ">
+              <div class="active d-flex flex-row justify-content-center">
+                <button type="button" class=" custom-button" id="Navigation"> Navigation</button>
+                   <!--modal buttons-->
+              </div>
+                    <div class="item-card " id="Arrangement">
+                      <div class="d-flex flex-row justify-content-around">
+                        <div>
+                        <button type="button"  class="buttons" id="Zoom"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
+                          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg><span class="m-2">Zoom</span></button>
+                        </div>
+                        <div>
+                        <button type="button"  class="buttons" id="Pan"><svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrows-move" viewBox="0 0 16 16">
+                          <path fill-rule="evenodd" d="M7.646.146a.5.5 0 0 1 .708 0l2 2a.5.5 0 0 1-.708.708L8.5 1.707V5.5a.5.5 0 0 1-1 0V1.707L6.354 2.854a.5.5 0 1 1-.708-.708l2-2zM8 10a.5.5 0 0 1 .5.5v3.793l1.146-1.147a.5.5 0 0 1 .708.708l-2 2a.5.5 0 0 1-.708 0l-2-2a.5.5 0 0 1 .708-.708L7.5 14.293V10.5A.5.5 0 0 1 8 10zM.146 8.354a.5.5 0 0 1 0-.708l2-2a.5.5 0 1 1 .708.708L1.707 7.5H5.5a.5.5 0 0 1 0 1H1.707l1.147 1.146a.5.5 0 0 1-.708.708l-2-2zM10 8a.5.5 0 0 1 .5-.5h3.793l-1.147-1.146a.5.5 0 0 1 .708-.708l2 2a.5.5 0 0 1 0 .708l-2 2a.5.5 0 0 1-.708-.708L14.293 8.5H10.5A.5.5 0 0 1 10 8z"/>
+                        </svg><span class="m-2">Pan</span></button>
+                        </div>
+                      </div>
+                      <div class="d-flex flex-row justify-content-around mt-2">
+                        <div>
+                        <button type="button"  class="buttons" id="Rotate1"><svg width="18pt" height="18pt" fill="currentColor" version="1.1" viewBox="0 0 700 700" xmlns="http://www.w3.org/2000/svg">
+                          <path d="m227.5 274.57v-109.9l105 57.926v120.23l-96.426-52.5v-0.003906c-2.7148-1.6055-4.9492-3.918-6.457-6.6914-1.5117-2.7734-2.2422-5.9023-2.1172-9.0586zm246.05 0v-109.9l-105 57.926v120.23l96.426-52.5v-0.003906c5.1328-3.5352 8-9.5352 7.5234-15.75zm-18.551-139.47-95.727-52.5c-2.6602-1.5391-5.6758-2.3477-8.75-2.3477-3.0703 0-6.0898 0.80859-8.75 2.3477l-95.727 52.5 103.95 57.398zm52.5 49v41.648c24.652 15.066 40.445 41.172 42.352 70 0 46.551-51.625 89.426-128.62 106.75-6.2539 0.6875-11.664 4.6602-14.195 10.418-2.5312 5.7578-1.7969 12.43 1.9258 17.5 3.7227 5.0703 9.8672 7.7695 16.117 7.082 1.2188 0.17188 2.457 0.17188 3.6758 0 94.852-21.176 156.1-76.477 156.1-140 0.52344-45.324-27.828-85.574-77.352-113.4zm-175 199.15-8.5742-9.2734c-2.1914-2.3438-4.9805-4.0391-8.0664-4.9023s-6.3477-0.86328-9.4336 0c-2.6992 0.60938-5.1797 1.9414-7.1758 3.8516-3.4023 3.1367-5.4219 7.4961-5.6211 12.121-0.19531 4.625 1.4492 9.1367 4.5703 12.555l8.3984 9.1016c-90.301-11.199-157.5-57.75-157.5-111.65l0.003906-0.003907c2.3516-28.777 18.535-54.621 43.398-69.301v-41.648c-49 27.824-77.352 68.074-77.352 110.95 0 72.977 79.801 133.18 189.35 146.65l-8.5742 6.8242c-3.7852 3.0352-6.1367 7.5078-6.5 12.344-0.36328 4.8398 1.2969 9.6094 4.5859 13.176 3.2891 3.5625 7.9141 5.6055 12.762 5.6328 3.9922-0.074219 7.8555-1.4258 11.027-3.8516l43.75-35c3.793-3.0586 6.1406-7.5625 6.4727-12.426 0.3125-4.8398-1.3984-9.5938-4.7227-13.125z"/>
+                         </svg><span class="m-2">Rotate</span></button>
+                        </div>
+                        <div>
+                        <button type="button"  class="buttons" id="viewPoints">Viewpoints</button>
+                        </div>
+                      </div>
+                        
+                       
+                </div>
+            </div>
+
+
+            <div class="carousel-item ">
+              <div class="active d-flex flex-row justify-content-center">
+                <button type="button" class=" custom-button" id="Advanced" >Advanced</button>
+              </div>
+  
+              <!--modal buttons-->
+              <div class="item-card " id="Advanced">
+                <div class="d-flex flex-row justify-content-around">
+                  <div>
+                  <button type="button"  class="buttons" id="Login">Login</button>
+                  </div>
+                  <div>
+                  <button type="button"  class="buttons" id="Render">Render</button>
+                  </div>
+                </div>  
+                <div class="d-flex flex-row justify-content-around mt-2">
+                  <div>
+                  <button type="button"  class="buttons" id="Collaboration">Collaboration</button>
+                  </div>
+                  <div>
+                  <button type="button"  class="buttons" id="Measurements">Measurements</button>
+                  </div>
+                </div>  
+                 
+            </div>
+           </div>
+  
+          
+            <div class="carousel-item">
+             
+            <div class="d-flex flex-row justify-content-evenly">
+                <button type="button" class=" custom-button" id="Settings">Settings</button>
+             </div>       
+         
+             <!--modal buttons-->
+         
+              <div class="item-card " id="Settings">
+             <div class="d-flex flex-row justify-content-around">
+                <div>
+                <button type="button"  class="buttons" id="Preferences">Preferences</button>
+                </div>
+                  <div>
+                <button type="button"  class="buttons" id="ReloadScene">Reload Scene</button>
+                </div>
+                <div>
+                  <button type="button"  class="buttons" onclick="window.open('../help.html')">Help</button>
+                  </div>
+              </div>  
+              </div>
+         
+
+          </div>
+          
+            <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </a>
+         
+      </div>
+        <!--end-->
+        </div> 
+  
+        <!--modal box container-->
+        <div class="container2" id="container2">
+
+          <div id="myModalTour" class="modal modal-drag movableDialog ">
+            <!-- Modal content -->
+                   <div class="modal-dialog " style="left: 30px; ">
+                    <div class="modal-content" style="width: 350px; height:120px; ">
+                      <div class=" modal-drag-handle">
+                        <button  id="closeTour" class="closeButton m-3">
+                          X
+                        </button> 
+                     </div>
+                    <p style="color: black; font-size:20px;" class="text-center">Video Coming Soon</p>
+                  </div>
+                  </div>
+            </div>
+
+          <!-- Modal -->
+          <div class="modal "  id="myModalChair1" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px; width:350px; height:250px">
+                <!-- Modal Header -->
+                    <div class="modal-header modal-drag-handle d-flex flex-row ">
+                      <h1 class=" modal-title w-100 tc-section-model-head">Chair</h1>
+                      <button  id="closeChair" class="closeButton m-1" >
+                          X
+                      </button>
+                      <span class=""></span>
+                    </div>
+                    <div class="horizontal-line"> </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                          <div class="d-flex flex-row justify-content-evenly m-3">
+                            <div class="d-flex flex-row">
+                            <input type="radio" checked="checked" id="Height" name="Chair" value="0">
+                            <label for="Height" class="label-heading">Height</label>
+                            </div>
+                            <div class="d-flex flex-row">
+                            <input type="radio"  id="Rotate" name="Chair" value="1">
+                            <label for="Rotate" class="label-heading">Rotate</label>
+                          </div>
+                          <div class="d-flex flex-row">
+                            <input type="radio"  id="Back Incline" name="Chair" value="2">
+                            <label for="Back Incline" class="label-heading">Back Incline</label>
+                          </div> 
+                          </div>  
+
+                          <div class="mt-2">
+                              <h1 class="modal-sub-heading text-align-left">Chair Material</h1>
+                              <div class="d-flex flex-row">
+                                  
+                                  <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                                  <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                                  <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                                  <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                              </div>
+                              
+                          </div>
+
+                          <div class="mt-2 d-flex flex-row">
+                              <input type="radio"  id="TrySimilarChair" name="Chair" >
+                              <label for="Try similar chair" class="label-heading">Try similar chair</label>
+                              
+                            </div>
+                    </div>
+              </div>
+            </div>
+          </div>
+
+          <!--Modal-->
+          <div class="modal "  id="myModalSimilaChairs" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px;  width:350px; height:250px">
+                <!-- Modal Header -->
+                    <div class="modal-header modal-drag-handle d-flex flex-row m-2 ">
+                      <h1 class=" modal-title w-100 tc-section-model-head">Select similar chairs</h1>
+                      <button  id="closeSimilaChairs" class="closeButton m-1" >
+                          X
+                      </button>
+                    </div>
+                    <div class="horizontal-line"> </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                          <div class="d-flex flex-row m-2">
+                            <div class="d-flex flex-column m-2">
+                            <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                            <input type="radio" checked="checked" id="Black Leather Chair" name="Chair" value="0">
+                            <label for="Black Leather Chair" class="label-heading">Black Leather Chair</label><br>
+                            <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                              <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                            </svg>99.99</span>
+                            </div>
+
+                            <div class="d-flex flex-column m-2">
+                              <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                              <input type="radio" checked="checked" id="Grey wooden chair" name="Chair" value="1">
+                              <label for="Grey wooden chair" class="label-heading">Grey wooden chair</label><br>
+                              <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                              </svg>99.99</span>
+                              </div>
+
+
+                              <div class="d-flex flex-column m-2">
+                                <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                                <input type="radio" checked="checked" id="Grey leather chair" name="Chair" value="2">
+                                <label for="Grey leather chair" class="label-heading">Grey leather chair</label><br>
+                                <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                  <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                                </svg>99.99</span>
+                                </div>
+                            
+                            
+                          </div>  
+
+                         
+                    </div>
+              </div>
+            </div>
+          </div>
+        
+
+            <!-- The Modal -->
+        <div class="modal "  id="myModalTable1" >
+          <div class="modal-dialog " role="document" >
+            <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px;  width:350px; height:250px">
+           <!-- Modal Header -->
+           <div class="modal-header modal-drag-handle d-flex flex-row  m-2">
+            <h1 class=" modal-title w-100 tc-section-model-head">Table</h1>
+            <button  id="closeTable1" class="closeButton"  >
+              X
+          </button>
+          </div>
+          <div class="horizontal-line"> </div>
+            <!-- Modal body -->
+            <div class="modal-body">
+              <h1 class="modal-sub-heading text-align-left">Table Level</h1>
+              <div class="d-flex flex-row  ">
+                 
+                    <input type="radio" checked="checked" id="Level-1"  value="0">
+                    <label for="Level-1" class="label-heading">Level-1</label>
+                
+                 
+                    <input type="radio"  id="Level-2"  value="1">
+                    <label for="Level-2" class="label-heading">Level-2</label>
+                 
+                   
+                    <input type="radio"  id="Level-3" value="2">
+                    <label for="Level-3" class="label-heading">Level-3</label>
+                 
+                  </div>  
+
+                  <div class="mt-2">
+                      <h1 class="modal-sub-heading text-align-left">Table Material</h1>
+                      <div class="d-flex flex-row">
+                          
+                          <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                          <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                          <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                          <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                      </div>
+                      
+                  </div>
+
+                  <div class="mt-2 d-flex flex-row">
+                      <input type="radio"  id="TrySimilarTable" name="Chair" >
+                      <label for="Try similar chair" class="label-heading">Try similar tables</label>
+                      
+                    </div>
+            </div>
+            </div>
+            </div>
+            </div>
+           
+
+              <!--Modal-->
+          <div class="modal "  id="myModalSimilarTables" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px;width:300px">
+                <!-- Modal Header -->
+                    <div class="modal-header modal-drag-handle d-flex flex-row m-2 ">
+                      <h1 class=" modal-title w-100 tc-section-model-head">Select similar tables</h1>
+                      <button  id="closeSimilaTables" class="closeButton m-1" >
+                          X
+                      </button>
+                    </div>
+                    <div class="horizontal-line"> </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                          <div class="d-flex flex-row m-2">
+                            <div class="d-flex flex-column m-2">
+                            <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                            <input type="radio" checked="checked" id="Wooden table"  value="0">
+                            <label for="Wooden table" class="label-heading">Wooden table</label><br>
+                            <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                              <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                            </svg>99.99</span>
+                            </div>
+
+                            <div class="d-flex flex-column m-2">
+                              <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                              <input type="radio" checked="checked" id="Black table"  value="1">
+                              <label for="Black table" class="label-heading">Black table</label><br>
+                              <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                              </svg>99.99</span>
+                              </div>
+
+
+                              <div class="d-flex flex-column m-2">
+                                <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                                <input type="radio" checked="checked" id="White table"  value="2">
+                                <label for="White table" class="label-heading">White table</label><br>
+                                <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                  <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                                </svg>99.99</span>
+                                </div>
+                            
+                            
+                          </div>  
+
+                         
+                </div>
+              </div>
+            </div>
+          </div>
+
+             <!-- The Modal -->
+        <div class="modal "  id="myModalWindowBlind1" >
+          <div class="modal-dialog " role="document" >
+            <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px; width:350px">
+            <!-- Modal Header -->
+            <div class="modal-top modal-drag-handle d-flex flex-row m-2 ">
+             <h1 class=" modal-title w-100 tc-section-model-head">Window Blinds</h1>
+             <button  id="closeWindowBlinds" class="closeButton" data-dismiss="modal">
+                 X
+             </button>
+             
+           </div>
+           <div class="horizontal-line"> </div>
+             <!-- Modal body -->
+             <div class="modal-body">
+                
+                     
+                     <input type="radio" checked="checked" id="open"  value="0">
+                     <label for="open" class="label-heading">Open <span style="font-size:10px; color:rgb(70, 67, 67); margin-left: 10px;">( Sunlight coming through window blinds )</span></label>
+                    <br/>
+                     <input type="radio"  id="close"  value="1">
+                     <label for="close" class="label-heading">Close</label>
+
+                   <div class="mt-2 d-flex flex-row justify-content-start">
+                       <input type="radio"  id="TrySimilarWindowBlinds" value="2" >
+                       <label for="Try similar chair" class="label-heading">Try similar Window Blinds</label>
+                       
+                     </div>
+             </div>
+             </div>
+             </div>
+             </div>
+
+
+                <!--Modal-->
+          <div class="modal "  id="myModalSimilarWindowBlinds" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px">
+                <!-- Modal Header -->
+                    <div class="modal-header modal-drag-handle d-flex flex-row m-2 ">
+                      <h1 class=" modal-title w-100 tc-section-model-head">Select similar window blinds</h1>
+                      <button  id="closeSimilarWindowBlinds" class="closeButton m-1" >
+                          X
+                      </button>
+                    </div>
+                    <div class="horizontal-line"> </div>
+                    <!-- Modal body -->
+                    <div class="modal-body">
+                          <div class="d-flex flex-row m-2">
+                            <div class="d-flex flex-column m-2">
+                            <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                            <input type="radio" checked="checked" id="Dark brawn blind"  value="0">
+                            <label for="Dark brawn blind" class="label-heading">Dark brawn blind</label><br>
+                            <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                              <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                            </svg>99.99</span>
+                            </div>
+
+                            <div class="d-flex flex-column m-2">
+                              <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                              <input type="radio" checked="checked" id="Silver blind"  value="1">
+                              <label for="Silver blind" class="label-heading">Silver blind</label><br>
+                              <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                              </svg>99.99</span>
+                              </div>
+
+
+                              <div class="d-flex flex-column m-2">
+                                <img scr="src/assets/textures/texture_brown-removebg-preview.png" class="texture-img m-2" alt="img"/>
+                                <input type="radio" checked="checked" id="wooden  finish blinds"  value="2">
+                                <label for="wooden  finish blinds" class="label-heading">wooden  finish blinds</label><br>
+                                <span style="font-size: 16px; color:red; "><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                                  <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                                </svg>99.99</span>
+                                </div>
+                            
+                            
+                          </div>  
+
+                         
+                </div>
+              </div>
+            </div>
+          </div>
+             
+            <!-- The Modal -->
+        <div class="modal"  id="myModalControls" >
+          <div class="modal-dialog " role="document" >
+            <div class="modal-content"  style=" height:300px; border: 2px red solid; background-color: none; border-radius: 20px;  width:350px; height:250px">
+            <!-- Modal Header -->
+            <div class="modal-top modal-drag-handle d-flex flex-row m-2 ">
+             <h1 class=" modal-title w-100 tc-section-model-head">Controls</h1>
+             <button  id="closeContols" class="closeButton" data-dismiss="modal">
+                 X
+             </button>
+             
+           </div>
+           <div class="horizontal-line"> </div>
+             <!-- Modal body -->
+             <div class="modal-body">
+                 <div class="d-flex flex-row">
+                   <div >
+                    
+                      <label class="switch m-1">
+                        <input type="checkbox" id="pitchDark"style="with:0px;height:0px">
+                          <span class="slider round"></span>
+                      </label>
+                      <label for="on/off" class="label-heading " >ON/OFF</label>
+              
+                   
+                      <br/>
+                        <label class="switch m-1">
+                          <input type="checkbox" id="pitchDark" style="with:0px;height:0px">
+                          <span class="slider round"></span>
+                        </label>
+                        <label for="pitchDark" class="label-heading">pitch Dark</label>
+                     
+
+                        <br/>
+                      <label class="switch m-1">
+                        <input type="checkbox" id="allLightsOff" style="with:0px;height:0px">
+                        <span class="slider round"></span>
+                      </label>
+                      <label for="allLightsOff" class="label-heading">All Lights Off</label>
+                   
+                     
+                      <br/>
+                        <label class="switch m-1">
+                          <input type="checkbox" id="ceilingLight" style="with:0px;height:0px">
+                          <span class="slider round"></span>
+                        </label>
+                        <label for="ceilingLight" class="label-heading">Ceiling Light</label>
+                    
+                        
+                        <br/>
+                          <label class="switch m-1 ">
+                            <input type="checkbox" id="desktopLight" style="with:0px;height:0px">
+                            <span class="slider round"></span>
+                          </label>
+                          <label for="desktopLight" class="label-heading">Desktop Light</label>
+                     
+
+                          <br/>
+                            <label class="switch m-1">
+                              <input type="checkbox" id="dayLight" style="with:0px;height:0px">
+                              <span class="slider round"></span>
+                            </label>
+                            <label for="dayLight" class="label-heading">Day Light</label>
+                         
+
+                           
+                              
+                   </div>  
+ 
+                   <div class="m-3">
+                   <div class="m-2 ">
+                    <h1 class="modal-sub-heading w-100 tc-section-model-head">Dimmer</h1>
+                      <input type="range" min="10" max="1000" value="50" class="slider1" id="myRange">
+                         
+                  </div>
+
+                  <div class="mt-3 ">
+                    <h1 class="modal-sub-heading w-100 tc-section-model-head m-2 " >Colors</h1>
+                    <input type="color" id="favcolor" name="favcolor" value="#ff0000" class="ml-3">
+                         
+                     </div>
+                     </div>
+                </div>
+             </div>
+             </div>
+             </div>
+             </div>
+
+               <!-- The Modal -->
+           <div class="modal "  id="myModalArtifacts" >
+            <div class="modal-dialog " role="document" >
+             <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px">
+            <!-- Modal Header -->
+            <div class="modal-title modal-drag-handle d-flex flex-row m-2 ">
+             <h1 class=" modal-title w-100 tc-section-model-head">Artifacts</h1>
+             <button  id="closeArtifacts" class="closeButton" data-dismiss="modal">
+                 X
+             </button>
+             
+           </div>
+           <div class="horizontal-line"> </div>
+             <!-- Modal body -->
+             <div class="modal-body">
+             
+                      <label class="switch ">
+                        <input type="checkbox" id="Shadow" style="with:0px;height:0px">
+                        <span class="slider round"></span>
+                      </label>
+                      <label for="Shadow" class="label-heading">Shadow</label>
+                     
+
+                     <br/>
+                        <label class="switch">
+                          <input type="checkbox" id="Reflection" style="with:0px;height:0px">
+                          <span class="slider round"></span>
+                        </label>
+                        <label for="Reflection" class="label-heading">Reflection</label>
+                       
+
+                      <br/>
+                      <label class="switch ">
+                        <input type="checkbox" id="Ambient Occlusion" style="with:0px;height:0px">
+                        <span class="slider round"></span>
+                      </label>
+                      <label for="Ambient Occlusion" class="label-heading">Ambient Occlusion</label>
+                   
+                  
+             </div>
+             </div>
+             </div>
+             </div>
+
+
+              <!-- The Modal -->
+          <div class="modal "  id="myModalViewpoints" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px">
+            <!-- Modal Header -->
+            <div class="modal-title modal-drag-handle d-flex flex-row m-2 ">
+             <h1 class="modal-title  w-100 tc-section-model-head">View Points</h1>
+             <button  id="closeViewpoints" class="closeButton">
+                 X
+             </button>
+             
+           </div>
+           <div class="horizontal-line"> </div>
+             <!-- Modal body -->
+             <div class="modal-body">
+              <div class="d-flex flex-row justify-content-around">
+                  <div class="d-flex flex-column m-2">
+                     <div> 
+                    <input type="radio" checked="checked" id="Main"  value="0">
+                     <label for="Main" class="label-heading m-1">Main</label>
+                  </div>
+                  <div>
+                     <input type="radio"  id="Table"  value="1">
+                     <label for="Table" class="label-heading m-1">Table</label>
+                   </div>
+                   <div>
+                     <input type="radio"  id="Chair"  value="2">
+                     <label for="Chair" class="label-heading">Chair</label>
+                   </div>
+                    </div> 
+    
+                    <div class="d-flex flex-column m-2 ">
+                    <div>
+                     <input type="radio" checked="checked" id="Blinds"  value="0">
+                    <label for="Blinds" class="label-heading">Blinds</label>
+                   </div>
+                   <div>
+                    <input type="radio"  id="Ceiling"  value="3">
+                    <label for="Table" class="label-heading m-1">Ceiling</label>
+                    </div>
+                    <div>
+                    <input type="radio"  id="Back"  value="4">
+                    <label for="Back" class="label-heading m-1">Back</label>
+                    </div>
+                  </div>  
+                 </div> 
+                   
+             </div>
+             </div>
+             </div> 
+             </div>
+
+             
+              <!-- The Modal -->
+          <div class="modal "  id="myModalLogin" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px;  width:350px; height:250px">
+            <!--Modal Header-->
+              <div class="modal-top modal-drag-handel d-flex flex-row m-2 ">
+                <h1 class="modal-title w-100 tc-section-model-head m-2">Welcome Back!</h1>
+                <button  id="closeLogin" class="closeButton">
+                  X
+                </button>
+              </div>
+          
+             <!-- Modal body -->
+             <div class="modal-body">
+              <div class="d-flex flex-column m-2">
+                <input type="email" id="email" placeholder="XYZ@gmail.com" class="input-box"/>
+                <input type="password" id="password" placeholder="123@xyz" class="input-box"/>
+            
+                <br/>
+                <div>
+                <input type="radio" checked="checked" id="reminder"  value="0" class="mt-2">
+                <label for="reminder" class="label-heading mt-0">Remember Me</label> 
+                </div>
+             </div>
+              <p class="text-center mt-2">Forget Password?</p>
+          
+              <div class="text-center">
+                <button type="button" class="login-button text-center">Login</button>
+              </div>
+              <p class="m-3 text-center" >Dont have account? <a style="color:red" id="signup">Sign Up</a></p>
+          
+            </div>
+
+                   
+             </div>
+             </div>
+             </div> 
+             </div>
+           
+          
+           
+            
+  
+                 <!-- The Modal -->
+          <div class="modal"  id="myModalRender" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px ; width:350px; height:250px">
+              <!-- Modal Header -->
+              <div class="modal-top modal-drag-handle d-flex flex-row m-2 ">
+              <h1 class=" modal-title w-100 tc-section-model-head">Render</h1>
+              <button  id="closeRender" class="closeButton" data-dismiss="modal">
+                  X
+              </button>
+              
+            </div>
+            <div class="horizontal-line"> </div>
+              <!-- Modal body -->
+              <div class="modal-body">
+                  <h3 style="font-size:14px; font-family:Roboto;">Capture your design with a Video realistic rendered Image/Video via VisCommerce Cloud</h3>
+                    <div class="d-flex flex-row justify-content-between m-2">
+                      <div class="m-2">
+                      <div>
+                      <input type="radio" checked="checked" id="Open"  value="0">
+                      <label for="Open" class="label-heading">Image </label>
+                      </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <button type="button" class="resolutionBtn">1K</button>
+                            <button type="button" class="resolutionBtn">2K</button>
+                          </div>
+                          <div>
+                            <button type="button" class="resolutionBtn">3K</button>
+                            <button type="button" class="resolutionBtn">4K</button>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="m-2">
+                        <div>
+                      <input type="radio"  id="Close"  value="1">
+                      <label for="Close" class="label-heading">Video</label>
+                        </div>
+                        <div class="d-flex flex-column">
+                          <div>
+                            <button type="button" class="resolutionBtn">1K  30fps</button>
+                            <button type="button" class="resolutionBtn">1K  60fps</button>
+                          </div>
+                          <div>
+                            <button type="button" class="resolutionBtn">2K  30fps</button>
+                            <button type="button" class="resolutionBtn">2K  30fps</button>
+                          </div>
+                        </div>
+                      </div> 
+                    </div>  
+
+
+                    <div class="text-center">
+                      <button type="button" class="longButton"><svg xmlns="http://www.w3.org/2000/svg" style="margin:5px" width="20" height="20" fill="currentColor" class="bi bi-currency-dollar" viewBox="0 0 16 16">
+                        <path d="M4 10.781c.148 1.667 1.513 2.85 3.591 3.003V15h1.043v-1.216c2.27-.179 3.678-1.438 3.678-3.3 0-1.59-.947-2.51-2.956-3.028l-.722-.187V3.467c1.122.11 1.879.714 2.07 1.616h1.47c-.166-1.6-1.54-2.748-3.54-2.875V1H7.591v1.233c-1.939.23-3.27 1.472-3.27 3.156 0 1.454.966 2.483 2.661 2.917l.61.162v4.031c-1.149-.17-1.94-.8-2.131-1.718H4zm3.391-3.836c-1.043-.263-1.6-.825-1.6-1.616 0-.944.704-1.641 1.8-1.828v3.495l-.2-.05zm1.591 1.872c1.287.323 1.852.859 1.852 1.769 0 1.097-.826 1.828-2.2 1.939V8.73l.348.086z"/>
+                      </svg>Buy</button>
+                      </div>
+              </div>
+              </div>
+              </div>
+              </div>
+       
+
+                   <!-- The Modal -->
+          <div class="modal "  id="myModalCollaboration" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px;  width:350px; height:250px">
+            <!-- Modal Header -->
+            <div class="modal-title modal-drag-handle d-flex flex-row m-2 ">
+             <h1 class="modal-title  w-100 tc-section-model-head">Collaboration</h1>
+             <button  id="closeCollaboration" class="closeButton">
+                 X
+             </button>
+             
+           </div>
+           <div class="horizontal-line"> </div>
+             <!-- Modal body -->
+             <div class="modal-body">
+                   <div class="d-flex flex-column m-2">
+                   <div>
+                     <input type="radio" checked="checked" id="Real Time"  value="0">
+                     <label for="Real Time" class="label-heading m-1">Real Time</label>
+                   </div>
+                   <div>
+                     <input type="radio"  id="Comments"  value="1">
+                     <label for="Comments" class="label-heading m-1">Comments</label>
+                     </div>
+                     <div>
+                     <input type="radio"  id="Version Control"  value="2">
+                     <label for="Version Control" class="label-heading">Version Control</label>
+                    </div>
+                    </div> 
+                    <div class="text-center">
+                      <button type="button" class="longButton">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" class="bi bi-share-fill m-2" viewBox="0 0 16 16">
+                          <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+                        </svg> Share</button>
+                       </div>
+                   
+             </div>
+             </div>
+             </div> 
+             </div>
+        
+        <!-- The Modal -->
+        <div class="modal "  id="myModalMeasurement" >
+          <div class="modal-dialog " role="document" >
+            <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px;  width:350px; height:250px">
+          <!--Modal Header-->
+            <div class="modal-top modal-drag-handel d-flex flex-row mt-2 ">
+              <h1 class="modal-title w-100 tc-section-model-head m-2">Measurements</h1>
+              <button  id="closeMeasurement" class="closeButton">
+                X
+              </button>
+            </div>
+            <div class="horizontal-line"> </div>
+           <!-- Modal body -->
+           <div class="modal-body">
+            <div class="text-center">
+            <input type="radio" checked="checked" id="Measure"  value="0">
+            <label for="Measure" class="label-heading " style="font-size:18px;"> Measure</label>
+            </div>
+                 <p style="font-size:14px; font-family:Roboto; text-align: center;">Touch with fingre and drag</p>
+
+                <div>
+                  <h5 class="text-center mt-3">Unit Type</h5>
+                  <div class="d-flex flex-row justify-content-around mt-5">
+                    <button type="button" class="resolutionBtn">Feet</button>
+                    <button type="button" class="resolutionBtn">Inch</button>
+                    <button type="button" class="resolutionBtn">Meter</button>
+                    <button type="button" class="resolutionBtn">Cm</button>
+                  </div>
+                </div> 
+           </div>
+           </div>
+           </div> 
+           </div>
+          
+             
+             <!-- The Modal -->
+        <div class="modal "  id="myModalPreferences" >
+          <div class="modal-dialog " role="document" >
+            <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px">
+            <!-- Modal Header -->
+            <div class="modal-top modal-drag-handle d-flex flex-row m-2 ">
+             <h1 class=" modal-title w-100 tc-section-model-head">Preferences</h1>
+             <button  id="closePreferences" class="closeButton" data-dismiss="modal">
+                 X
+             </button>
+             
+           </div>
+           <div class="horizontal-line"> </div>
+             <!-- Modal body -->
+             <div class="modal-body">
+                   
+                   
+                     <input type="radio" checked="checked" id="Font"  value="0">
+                     <label for="Font" class="label-heading">Font </label>
+                    <br/>
+                   
+                     <input type="radio"  id="Color"  value="1">
+                     <label for="Color" class="label-heading">Color</label>
+                    
+                    <br/>
+                      <input type="radio"  id="Layout"  value="2">
+                      <label for="Layout" class="label-heading">Layout</label>
+                    
+                 
+
+             </div>
+             </div>
+             </div>
+             </div>
+
+                   <!-- The Modal -->
+          <div class="modal "  id="myModalSignup" >
+            <div class="modal-dialog " role="document" >
+              <div class="modal-content" style="border: 2px red solid; background-color: none; border-radius: 20px;  width:350px; height:250px">
+            <!--Modal Header-->
+              <div class="modal-top modal-drag-handel d-flex flex-row m-2 ">
+                <h1 class="modal-title w-100 tc-section-model-head m-2">Welcome Onbard!</h1>
+                <button  id="closeSignup" class="closeButton">
+                  X
+                </button>
+              </div>
+          
+             <!-- Modal body -->
+             <div class="modal-body">
+              <div class="d-flex flex-column m-2">
+                <input type="text" id="userName" placeholder="Enter your full name" class="input-box"/>
+                <input type="email" id="email1" placeholder="Enter you email" class="input-box"/>
+                <input type="password" id="password1" placeholder="Create password" class="input-box"/>
+                <input type="password" id="conformPassword" placeholder="Confirm password" class="input-box"/>
+                <div >
+                <input type="radio" checked="checked" id="reminder"  value="0" class="mt-2">
+                <label for="reminder" class="label-heading mt-0"> I Have read and approve the <span style="color:red;"> User Agreement</span></label> 
+                </div>
+              </div>
+            
+        
+          
+              <div class="text-center">
+                <button type="button" class="login-button text-center">Register</button>
+              </div>
+              <p class="m-3 text-center" >Already have account? <a style="color:red" id="Login">Login</a></p>
+          
+            </div>
+          
+                   
+             </div>
+             </div>
+             </div> 
+             </div>
+
+         </div>
+        <!--end modal box container-->
+       
+   
+      <script src="index.js"></script>
+     <!--<script type = "text/javascript">
+        $('.movableDialog').draggable({
+                handle: ".modal-header"
+        });
+        </script>-->
+   </div> 
+
+  </div>
+</main>
+
+</body>
+
+</html>
